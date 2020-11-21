@@ -11,7 +11,7 @@ public protocol AddAccount {
     func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel,Error>)-> Void)
 }
 
-public struct AddAccountModel : Codable{
+public struct AddAccountModel : Model {
     public var name: String
     public var email: String
     public var password: String
@@ -24,5 +24,7 @@ public struct AddAccountModel : Codable{
         self.passwordConfirmation = passwordConfirmation
     }
 }
+
+
 
 
