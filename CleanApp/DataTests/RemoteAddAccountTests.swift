@@ -34,7 +34,7 @@ class RemoteAddAccountTests: XCTestCase {
         let url = URL(string: "http://any-url.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
-        let addAccountModel = AddAccountModel(name: "Joao", email: "joao.camargo@gmail.com", password: "123456", passwordConfirmation: "123456")
+        let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
         XCTAssertEqual(httpClientSpy.url, url)
     }
@@ -44,7 +44,7 @@ class RemoteAddAccountTests: XCTestCase {
 func test_add_should_call_httpClient_with_correct_data() {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: URL(string: "http://any-url.com")!, httpClient: httpClientSpy)
-        let addAccountModel = AddAccountModel(name: "Joao", email: "joao.camargo@gmail.com", password: "123456", passwordConfirmation: "123456")
+        let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
         let data = try? JSONEncoder().encode(addAccountModel)
         XCTAssertEqual(httpClientSpy.data, data)
@@ -56,6 +56,11 @@ func test_add_should_call_httpClient_with_correct_data() {
 
 
 extension RemoteAddAccountTests{
+    //FACTORY
+    func makeAddAccountModel() -> AddAccountModel {
+        return AddAccountModel(name: "Joao", email: "joao.camargo@gmail.com", password: "123456", passwordConfirmation: "123456")
+    }
+    
     class HttpClientSpy: HttpPostClient {
         var url: URL?
         var data: Data?
