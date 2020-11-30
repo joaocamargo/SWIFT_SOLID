@@ -92,47 +92,10 @@ extension RemoteAddAccountTests{
         action()
         wait(for: [exp],timeout: 1)
     }
-    
-    func makeInvalidData() -> Data {
-        return Data("invalid".utf8)
-    }
-    
-    func makeURL() -> URL {
-        return URL(string: "http://any-url.com")!
-    }
-    
+     
     func makeAddAccountModel() -> AddAccountModel {
         return AddAccountModel(name: "Joao", email: "joao.camargo@gmail.com", password: "123456", passwordConfirmation: "123456")
     }
-    
-    func makeAccountModel() -> AccountModel {
-        return AccountModel(id: "any_id", name: "Joao", email: "joao.camargo@gmail.com", password: "123456")
-    }
-    
-    func checkMemoryLeak(for instance: AnyObject,file: StaticString = #filePath, line: UInt = #line){
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance)
-        }
-    }
-    
-    class HttpClientSpy: HttpPostClient {
-        var urls = [URL]()
-        var data: Data?
-        var completion: ((Result<Data,HttpError>) -> Void)?
-        
-        func post(to url: URL,with data: Data?, completion: @escaping(Result<Data,HttpError>)-> Void) {
-            self.urls.append(url)
-            self.data = data
-            self.completion = completion
-        }
-        
-        func completeWithError(_ error: HttpError){
-            completion?(.failure(error))
-        }
-        
-        func completeWithData(data: Data){
-            completion?(.success(data))
-        }
-    }
+
 }
 
