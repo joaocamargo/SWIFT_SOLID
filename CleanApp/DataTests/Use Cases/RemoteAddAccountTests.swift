@@ -59,9 +59,13 @@ class RemoteAddAccountTests: XCTestCase {
 
 extension RemoteAddAccountTests{
     //FACTORY
-    func makeSut(url: URL = URL(string: "http://any-url.com")!) -> (sut: RemoteAddAccount, HttpClientSpy: HttpClientSpy) {
+    func makeSut(url: URL = URL(string: "http://any-url.com")!,file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteAddAccount, HttpClientSpy: HttpClientSpy) {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
+        
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: httpClientSpy, file: file, line: line)
+        
         return (sut,httpClientSpy)
     }
     
@@ -93,6 +97,12 @@ extension RemoteAddAccountTests{
     
     func makeAccountModel() -> AccountModel {
         return AccountModel(id: "any_id", name: "Joao", email: "joao.camargo@gmail.com", password: "123456")
+    }
+    
+    func checkMemoryLeak(for instance: AnyObject,file: StaticString = #filePath, line: UInt = #line){
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance)
+        }
     }
     
     class HttpClientSpy: HttpPostClient {
