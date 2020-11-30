@@ -45,6 +45,16 @@ class RemoteAddAccountTests: XCTestCase {
         })
     }
     
+    func test_add_should_NOT_complete_with_error_if_sut_has_been_deallocated(){
+        let httpClientSpy = HttpClientSpy()
+        var sut: RemoteAddAccount? = RemoteAddAccount(url: makeURL(), httpClient: httpClientSpy)
+        var result: Result<AccountModel, DomainError>?
+        sut?.add(addAccountModel: makeAddAccountModel()) { result = $0 }
+        sut = nil  //atribui a nil, simular um usuario que saiu da tela, e quanto o codigo acima terminar de executar, ele tem q tar nil, pq nao é pra executar
+        httpClientSpy.completeWithError(.noConnectivity)
+        XCTAssertNil(result)        
+    }
+    
     
     func test_add_should_complete_with_account_if_client_complete_with_data(){
         let (sut,httpClientSpy) = makeSut()
