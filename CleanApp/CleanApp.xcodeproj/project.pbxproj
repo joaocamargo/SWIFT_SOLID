@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		057BC029257589D600BBBCC0 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057BC028257589D600BBBCC0 /* ExtensionHelper.swift */; };
 		05EF2F772565DCDF008283E5 /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF2F762565DCDF008283E5 /* AddAccount.swift */; };
 		05EF2F7A2565DE17008283E5 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF2F792565DE17008283E5 /* AccountModel.swift */; };
 		05EF2F8A2565DF61008283E5 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EF2F812565DF60008283E5 /* Data.framework */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		057BC028257589D600BBBCC0 /* ExtensionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
 		05EF2F6C2565DA96008283E5 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05EF2F6F2565DA97008283E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05EF2F762565DCDF008283E5 /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		057BC027257589BB00BBBCC0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				057BC028257589D600BBBCC0 /* ExtensionHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		05EF2F502565D96B008283E5 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		05EF2F822565DF60008283E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				057BC027257589BB00BBBCC0 /* Helpers */,
 				05EF2FB9256956B9008283E5 /* Http */,
 				05EF2FB8256956A3008283E5 /* Use Cases */,
 				05EF2F842565DF60008283E5 /* Info.plist */,
@@ -362,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EF2FB125695514008283E5 /* HttpPostClient.swift in Sources */,
+				057BC029257589D600BBBCC0 /* ExtensionHelper.swift in Sources */,
 				05EF2FC525695B75008283E5 /* HttpError.swift in Sources */,
 				05EF2FAD256954CC008283E5 /* RemoteAddAccount.swift in Sources */,
 			);
