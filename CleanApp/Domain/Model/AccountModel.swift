@@ -9,6 +9,13 @@ import Foundation
 
 public struct AccountModel: Model {
     
+    public var accessToken: String
+
+    public init(accessToken: String) {
+        self.accessToken = accessToken
+    }
+    
+    /*
     public var id: String
     public var name: String
     public var email: String
@@ -19,5 +26,5 @@ public struct AccountModel: Model {
         self.name = name
         self.email = email
         self.password = password
-    }
+    }*/
 }
