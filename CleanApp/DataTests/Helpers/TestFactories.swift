@@ -19,6 +19,10 @@ func makeURL() -> URL {
     return URL(string: "http://any-url.com")!
 }
 
+func makeEmptyDate() -> Data{
+    return Data()
+}
+
 func makeError() -> Error {
     return NSError(domain: "erro", code: 0)
 }
