@@ -7,7 +7,7 @@
 		<key>CI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Data.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,12 +17,17 @@
 		<key>Domain.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Infra.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>UseCasesIntegrationTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>05EF2F882565DF61008283E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>05F8C33A257C0A3E00D269DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
