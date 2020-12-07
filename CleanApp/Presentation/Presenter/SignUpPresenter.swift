@@ -10,38 +10,38 @@ import Foundation
 public class SignUpPresenter {
     
     private let alertView: AlertView
+    private let emailValidator: EmailValidator
     
-    public init(alertView: AlertView){
+    public init(alertView: AlertView, emailValidator: EmailValidator){
         self.alertView = alertView
+        self.emailValidator = emailValidator
     }
     
-    public func signUp(viewModel: SignUpViewModel){
+    public func signUp(viewModel: SignUpViewModel) {//, emailValidator: EmailValidator){
         if let message = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
+        } else {
+            //pode seguir com use case
         }
     }
     
     private func validate(viewModel: SignUpViewModel) -> String? {
         if viewModel.name == nil || viewModel.name!.isEmpty {
              return "Nome é obrigatório"
-        }
-        
-        if viewModel.email == nil || viewModel.email!.isEmpty {
+        } else if viewModel.email == nil || viewModel.email!.isEmpty {
              return "Email é obrigatório"
-        }
-        
-        if viewModel.password == nil || viewModel.password!.isEmpty {
+        }  else if  viewModel.password == nil || viewModel.password!.isEmpty {
              return "Senha é obrigatório"
-        }
-        
-        if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
+        } else if  viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
              return "Confirmação de senha é obrigatório"
-        }
-        
-        if viewModel.password != viewModel.passwordConfirmation {
+        } else if viewModel.password != viewModel.passwordConfirmation {
              return "Confirmação de senha não coincide com senha"
+        } else if  !emailValidator.isValid(email: viewModel.email!) {
+            return "Email inválido"
         }
         
+        _ = emailValidator.isValid(email: viewModel.email!)
+
         
         return nil
     }
