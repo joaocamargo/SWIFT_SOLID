@@ -6,57 +6,9 @@
 //
 
 import XCTest
-
-class SignUpPresenter {
-    
-    private let alertView: AlertView
-    
-    init(alertView: AlertView){
-        self.alertView = alertView
-    }
-    
-    func signUp(viewModel: SignUpViewModel){
-        if let message = validate(viewModel: viewModel) {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
-        }
-    }
-    
-    private func validate(viewModel: SignUpViewModel) -> String? {
-        if viewModel.name == nil || viewModel.name!.isEmpty {
-             return "Nome é obrigatório"
-        }
-        
-        if viewModel.email == nil || viewModel.email!.isEmpty {
-             return "Email é obrigatório"
-        }
-        
-        if viewModel.password == nil || viewModel.password!.isEmpty {
-             return "Senha é obrigatório"
-        }
-        
-        if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-             return "Confirmação de senha é obrigatório"
-        }
-        return nil
-    }
-}
-
-protocol AlertView {
-    func showMessage(viewModel: AlertViewModel)
-}
-
-struct AlertViewModel: Equatable{
-    var title: String
-    var message: String
-}
+import Presentation
 
 
-public struct SignUpViewModel {
-    var name: String?
-    var email: String?
-    var password: String?
-    var passwordConfirmation: String?
-}
 
 class SignUpPresenterTests: XCTestCase {
     
@@ -86,6 +38,13 @@ class SignUpPresenterTests: XCTestCase {
         let signUpViewModel = SignUpViewModel(name: "any_name", email: "\(UUID().uuidString)@gmail.com", password: "secret")
         sut.signUp(viewModel: signUpViewModel)
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Confirmação de senha é obrigatório"))
+    }
+    
+    func test_signUp_should_show_error_message_if_password_confirmation_doesnt_match() {
+        let (sut, alertViewSpy) = makeSut()
+        let signUpViewModel = SignUpViewModel(name: "any_name", email: "\(UUID().uuidString)@gmail.com", password: "secret",passwordConfirmation: "secret2")
+        sut.signUp(viewModel: signUpViewModel)
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Falha na validação", message: "Confirmação de senha não coincide com senha"))
     }
     
 }
