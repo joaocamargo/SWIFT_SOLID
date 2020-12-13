@@ -6,23 +6,33 @@
 //
 
 import Foundation
+import Domain
 
 public class SignUpPresenter {
     
     private let alertView: AlertView
     private let emailValidator: EmailValidator
+    private let addAccount: AddAccount
     
-    public init(alertView: AlertView, emailValidator: EmailValidator){
+    public init(alertView: AlertView, emailValidator: EmailValidator, addAccount: AddAccount){
         self.alertView = alertView
         self.emailValidator = emailValidator
+        self.addAccount = addAccount
     }
     
     public func signUp(viewModel: SignUpViewModel) {//, emailValidator: EmailValidator){
         if let message = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            //pode seguir com use case
-        }
+            let addAccountModel = AddAccountModel(name: viewModel.name!, email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)
+            addAccount.add(addAccountModel: addAccountModel) { result in
+                switch result {
+                case .failure: self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+                case .success:
+                    break
+                }
+            }
+         }
     }
     
     private func validate(viewModel: SignUpViewModel) -> String? {
