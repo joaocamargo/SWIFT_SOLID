@@ -27,17 +27,17 @@ public class SignUpPresenter {
     
     private func validate(viewModel: SignUpViewModel) -> String? {
         if viewModel.name == nil || viewModel.name!.isEmpty {
-             return "Nome é obrigatório"
+             return "O campo Nome é obrigatório"
         } else if viewModel.email == nil || viewModel.email!.isEmpty {
-             return "Email é obrigatório"
+            return "O campo Email é obrigatório"
         }  else if  viewModel.password == nil || viewModel.password!.isEmpty {
-             return "Senha é obrigatório"
+            return "O campo Senha é obrigatório"
         } else if  viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-             return "Confirmação de senha é obrigatório"
+            return "O campo Confirmar Senha é obrigatório"
         } else if viewModel.password != viewModel.passwordConfirmation {
-             return "Confirmação de senha não coincide com senha"
+             return "O campo Confirmar Senha é inválido"
         } else if  !emailValidator.isValid(email: viewModel.email!) {
-            return "Email inválido"
+            return "O campo Email é inválido"
         }
         
         _ = emailValidator.isValid(email: viewModel.email!)
