@@ -105,10 +105,13 @@ class SignUpPresenterTests: XCTestCase {
     }
         
     func test_signUp_should_call_addAccount_with_correct_values() {
+        let email = "\(UUID().uuidString)@gmail.com"
         let addAccountSpy = AddAccountSpy()
+        var accountModel = makeAddAccountModel()
+        accountModel.email = email
         let sut = makeSut(addAccount: addAccountSpy)
-        sut.signUp(viewModel: makeSignUpViewModel())
-        XCTAssertEqual(addAccountSpy.addAccountModel,makeAddAccountModel())
+        sut.signUp(viewModel: makeSignUpViewModel(email: email))
+        XCTAssertEqual(addAccountSpy.addAccountModel,accountModel)
     }
     
     func test_signUp_should_show_error_message_id_addAccount_fails() {
