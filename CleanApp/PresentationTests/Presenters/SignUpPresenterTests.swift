@@ -8,7 +8,7 @@
 import XCTest
 import Presentation
 import Domain
-import Data
+//import Data
 
 class SignUpPresenterTests: XCTestCase {
     
@@ -216,19 +216,7 @@ extension SignUpPresenterTests{
             self.emit?(viewModel)
         }
     }
-    
-    class AlertViewSpy: AlertView {
-        var emit: ((AlertViewModel) -> Void)?
-        
-        
-        func observe(completion: @escaping(AlertViewModel)-> Void) {
-            self.emit = completion
-        }
-        
-        func showMessage(viewModel: AlertViewModel) {
-            self.emit?(viewModel)
-        }
-    }
+
     
     class EmailValidatorSpy: EmailValidator {
         var isValid = true
