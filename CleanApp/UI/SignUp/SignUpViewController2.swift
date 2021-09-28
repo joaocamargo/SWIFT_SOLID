@@ -25,6 +25,7 @@ public final class SignUpViewController2: UIViewController {
     
     public var saveButton : UIButton = {
         let button = UIButton(frame: .zero)
+        button.layer.cornerRadius = 5
         return button
     }()
     

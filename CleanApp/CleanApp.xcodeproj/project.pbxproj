@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05715C322702C4E100D9CB1D /* Text+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05715C312702C4E100D9CB1D /* Text+Ext.swift */; };
 		057BC029257589D600BBBCC0 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057BC028257589D600BBBCC0 /* ExtensionHelper.swift */; };
 		057BC02E25759A3A00BBBCC0 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057BC02D25759A3A00BBBCC0 /* TestExtensions.swift */; };
 		057BC03425759AB300BBBCC0 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057BC03325759AB300BBBCC0 /* TestFactories.swift */; };
@@ -190,6 +191,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05715C312702C4E100D9CB1D /* Text+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Ext.swift"; sourceTree = "<group>"; };
 		057BC028257589D600BBBCC0 /* ExtensionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
 		057BC02D25759A3A00BBBCC0 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		057BC03325759AB300BBBCC0 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
@@ -347,6 +349,14 @@
 				05F6E9B12702A3D20088D91B /* SignUpViewController2.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		05715C302702C4C500D9CB1D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05715C312702C4E100D9CB1D /* Text+Ext.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		057BC027257589BB00BBBCC0 /* Helpers */ = {
@@ -656,6 +666,7 @@
 		05F8C48E258F6C9D00D269DB /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				05715C302702C4C500D9CB1D /* Helpers */,
 				05715C2C2702C0FF00D9CB1D /* SignUp */,
 				05F8C491258F6C9D00D269DB /* Info.plist */,
 			);
@@ -1151,6 +1162,7 @@
 			files = (
 				05F6E9B42702A4110088D91B /* SignUpViewController2Tests.swift in Sources */,
 				05F8C51A258F776800D269DB /* SignUpViewController.swift in Sources */,
+				05715C322702C4E100D9CB1D /* Text+Ext.swift in Sources */,
 				05F8C490258F6C9D00D269DB /* SignUpViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

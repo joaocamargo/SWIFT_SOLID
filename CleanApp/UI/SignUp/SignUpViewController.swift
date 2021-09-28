@@ -11,14 +11,14 @@ import Presentation
 
 public final class SignUpViewController: UIViewController {
     
-   @IBOutlet public weak var loadingIndicator: UIActivityIndicatorView!
-   @IBOutlet public weak var saveButton: UIButton!
-   @IBOutlet public weak var nameTextField: UITextField!
-   @IBOutlet public weak var emailTextField: UITextField!
-   @IBOutlet public weak var passwordTextField: UITextField!
-   @IBOutlet public weak var confirmPasswordTextField: UITextField!
-
-
+    @IBOutlet public weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet public weak var saveButton: UIButton!
+    @IBOutlet public weak var nameTextField: UITextField!
+    @IBOutlet public weak var emailTextField: UITextField!
+    @IBOutlet public weak var passwordTextField: UITextField!
+    @IBOutlet public weak var confirmPasswordTextField: UITextField!
+    
+    
     var signUp: ((SignUpViewModel) -> Void)?
     
     override public func viewDidLoad() {
@@ -28,6 +28,7 @@ public final class SignUpViewController: UIViewController {
     
     private func configure() {
         saveButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        saveButton.layer.cornerRadius = 5
     }
     
     @objc private func saveButtonTapped() {
@@ -48,6 +49,8 @@ extension SignUpViewController: LoadingView {
 
 extension SignUpViewController: AlertView {
     public func showMessage(viewModel: AlertViewModel) {
-        
+        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert,animated: true)
     }
 }
