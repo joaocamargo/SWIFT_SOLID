@@ -330,6 +330,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05715C2C2702C0FF00D9CB1D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				05F8C48F258F6C9D00D269DB /* SignUpViewControllerTests.swift */,
+				05F6E9B32702A4110088D91B /* SignUpViewController2Tests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		05715C2D2702C10E00D9CB1D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				05F8C504258F754800D269DB /* SignUpViewController.swift */,
+				05F6E9B12702A3D20088D91B /* SignUpViewController2.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		057BC027257589BB00BBBCC0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				05F8C32A257C04AD00D269DB /* Http */,
-				05F8C325257C046900D269DB /* AlamofireAdapter.swift */,
 				057BC04A25759D4200BBBCC0 /* Info.plist */,
 			);
 			path = Infra;
@@ -503,6 +520,7 @@
 		05F8C32A257C04AD00D269DB /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				05F8C325257C046900D269DB /* AlamofireAdapter.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -629,9 +647,8 @@
 			isa = PBXGroup;
 			children = (
 				05F8C485258F6C9D00D269DB /* Info.plist */,
-				05F8C504258F754800D269DB /* SignUpViewController.swift */,
+				05715C2D2702C10E00D9CB1D /* SignUp */,
 				05F8C539258F793700D269DB /* SignUp.storyboard */,
-				05F6E9B12702A3D20088D91B /* SignUpViewController2.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -639,8 +656,7 @@
 		05F8C48E258F6C9D00D269DB /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				05F8C48F258F6C9D00D269DB /* SignUpViewControllerTests.swift */,
-				05F6E9B32702A4110088D91B /* SignUpViewController2Tests.swift */,
+				05715C2C2702C0FF00D9CB1D /* SignUp */,
 				05F8C491258F6C9D00D269DB /* Info.plist */,
 			);
 			path = UITests;

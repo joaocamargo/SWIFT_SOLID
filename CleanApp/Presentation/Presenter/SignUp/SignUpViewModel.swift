@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Domain
 
-public struct SignUpViewModel {
+public struct SignUpViewModel : Model {
     public  init(name: String? = nil, email: String? = nil, password: String? = nil, passwordConfirmation: String? = nil) {
         self.name = name
         self.email = email
