@@ -7,7 +7,7 @@
 
 import XCTest
 import UIKit
-
+import Presentation
 
 @testable import UI
 
@@ -18,5 +18,19 @@ class SignUpViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertFalse(sut.loadingIndicator.isAnimating)
     }
+    
+    func test_sut_implements_loadingView() throws {
+        let sb = UIStoryboard(name: "SignUp", bundle: Bundle(for: SignUpViewController.self))
+        let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        XCTAssertNotNil(sut as LoadingView)
+    }
+    
+    func test_sut_implements_alertView() throws {
+        let sb = UIStoryboard(name: "SignUp", bundle: Bundle(for: SignUpViewController.self))
+        let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        XCTAssertNotNil(sut as AlertView)
+    }
+
+
 
 }

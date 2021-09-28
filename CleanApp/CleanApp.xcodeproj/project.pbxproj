@@ -30,6 +30,7 @@
 		05EF2FB125695514008283E5 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF2FB025695514008283E5 /* HttpPostClient.swift */; };
 		05EF2FBF2569597D008283E5 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF2FBE2569597D008283E5 /* DomainError.swift */; };
 		05EF2FC525695B75008283E5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EF2FC425695B75008283E5 /* HttpError.swift */; };
+		05F6E9B027029F130088D91B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F8C539258F793700D269DB /* SignUp.storyboard */; };
 		05F8C326257C046900D269DB /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C325257C046900D269DB /* AlamofireAdapter.swift */; };
 		05F8C330257C057B00D269DB /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C32F257C057B00D269DB /* UrlProtocolStub.swift */; };
 		05F8C33E257C0A3F00D269DB /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C33D257C0A3F00D269DB /* AddAccountIntegrationTests.swift */; };
@@ -53,12 +54,10 @@
 		05F8C472258B8F9B00D269DB /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C45C258B8F4B00D269DB /* TestFactories.swift */; };
 		05F8C48B258F6C9D00D269DB /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F8C482258F6C9C00D269DB /* UI.framework */; };
 		05F8C490258F6C9D00D269DB /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C48F258F6C9D00D269DB /* SignUpViewControllerTests.swift */; };
-		05F8C4AE258F6CDF00D269DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05F8C485258F6C9D00D269DB /* Info.plist */; };
 		05F8C4BD258F6E7500D269DB /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F8C35B257D147000D269DB /* Presentation.framework */; };
 		05F8C4BE258F6E7500D269DB /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05F8C35B257D147000D269DB /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F8C505258F754800D269DB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C504258F754800D269DB /* SignUpViewController.swift */; };
 		05F8C51A258F776800D269DB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8C504258F754800D269DB /* SignUpViewController.swift */; };
-		05F8C53A258F793700D269DB /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F8C539258F793700D269DB /* SignUp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1019,8 +1018,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F8C53A258F793700D269DB /* SignUp.storyboard in Resources */,
-				05F8C4AE258F6CDF00D269DB /* Info.plist in Resources */,
+				05F6E9B027029F130088D91B /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
