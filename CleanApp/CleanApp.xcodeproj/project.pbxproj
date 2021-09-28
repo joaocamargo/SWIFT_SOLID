@@ -342,6 +342,7 @@
 		05715C2D2702C10E00D9CB1D /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				05F8C539258F793700D269DB /* SignUp.storyboard */,
 				05F8C504258F754800D269DB /* SignUpViewController.swift */,
 				05F6E9B12702A3D20088D91B /* SignUpViewController2.swift */,
 			);
@@ -648,7 +649,6 @@
 			children = (
 				05F8C485258F6C9D00D269DB /* Info.plist */,
 				05715C2D2702C10E00D9CB1D /* SignUp */,
-				05F8C539258F793700D269DB /* SignUp.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
